@@ -15,6 +15,41 @@
     #hamburger-nav {
         display: flex;
     }
+    .hamburger-menu {
+        position: relative;
+        z-index: 100;
+    }
+    .menu-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        width: 200px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+    }
+    .menu-links.open {
+        max-height: 300px;
+        padding: 1rem 0;
+    }
+    .menu-links li {
+        list-style: none;
+    }
+    .menu-links a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+    }
+    .menu-links a:hover {
+        background: rgba(0, 0, 0, 0.05);
+        padding-left: 2rem;
+    }
     #experience, 
     .experience-details-container {
         margin-top: 2rem;
@@ -87,6 +122,13 @@
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
+    }
+    .menu-links a {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+    .menu-links {
+        width: 160px;
     }
     .section__pic-container {
         width: auto;
