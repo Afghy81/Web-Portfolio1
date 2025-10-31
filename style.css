@@ -1,10 +1,51 @@
 /* GENERAL */
+:root {
+    background: linear-gradient(
+        45deg, 
+        #f0d8ff,
+        #e6e6ff,
+        #d8f0ff,
+        #e6fffa,
+        #fff2e6,
+        #ffe6f0
+    );
+    background-size: 400% 400%;
+    animation: gradient 20s ease-in-out infinite;
+    animation-direction: alternate;
+}
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+        background-size: 100% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+        background-size: 200% 200%;
+    }
+    100% {
+        background-position: 0% 50%;
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes textGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -39,6 +80,54 @@ nav {
     height: 17vh;
 }
 
+.logo {
+    font-size: 1.5rem; /* Same as nav-links */
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        #9747FF,
+        #47A7FF,
+        #FF9147
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    background-size: 200% 200%;
+    animation: borderGlow 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .nav-links {
     gap: 2rem;
     list-style: none;
@@ -59,7 +148,7 @@ a:hover {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .logo:hover {
@@ -169,6 +258,19 @@ section {
     height: 80vh;
 }
 
+.profile-pic-round {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+
+.profile-image {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
 .section__pic-container {
     display: flex;
     height: 400px;
@@ -197,6 +299,17 @@ section {
 .title {
     font-size: 3rem;
     text-align: center;
+    background: linear-gradient(
+        45deg,
+        #9747FF,
+        #4F67FF,
+        #47B5FF
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 8s ease-in-out infinite alternate;
 }
 
 #socials-container {
